@@ -1,4 +1,5 @@
 import Link from "next/link";
+import styles from "@/app/page.module.css";
 
 const socialLinks = [
   { href: "https://github.com/tammy", text: "Github" },
@@ -8,36 +9,42 @@ const socialLinks = [
 
 function CustomLink({ href, children, className = "", ...props }) {
   return (
-    <Link href={href} className={`${className}`} {...props}>
+    <Link href={href} className={className} {...props}>
       {children}
     </Link>
   );
 }
 
-function Header() {
+function Title() {
   const goalsUrl = "https://asana.com/features/goals-reporting/goals";
 
   return (
-    <header className="">
-      <p>
+    <header className={styles.center}>
+      <h1>
         Tammy is building{" "}
         <CustomLink href={goalsUrl}>Goals at Asana.</CustomLink>
-      </p>
+      </h1>
     </header>
+  );
+}
+
+function SocialLink({ href, text }) {
+  return (
+    <CustomLink className={styles.card} href={href}>
+      {text.toLowerCase()}
+    </CustomLink>
   );
 }
 
 export default function Home() {
   return (
-    <main className="">
-      <Header />
-      <p>
+    <main className={styles.main}>
+      <Title />
+      <div>
         {socialLinks.map((link) => (
-          <CustomLink key={link.href} href={link.href}>
-            {link.text.toLowerCase()}
-          </CustomLink>
+          <SocialLink key={link.href} {...link} />
         ))}
-      </p>
+      </div>
     </main>
   );
 }
