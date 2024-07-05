@@ -1,10 +1,9 @@
 ## Getting Started
 
-```
+```bash
 # install dependencies
 pnpm i
-
-# start running the server
+# run the server
 pnpm dev
 ```
 
