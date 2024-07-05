@@ -5,7 +5,15 @@ const socialLinks = [
   { href: "https://github.com/tammy", text: "Github" },
 ];
 
-function CustomLink({ href, className = "", children }) {
+function CustomLink({
+  href,
+  className = "",
+  children,
+}: {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+}) {
   return (
     <Link
       className={`underline-offset-auto	hover:text-yellow-gold hover:transition-colors ease-in-out duration-200 ${className}`}
@@ -26,7 +34,7 @@ function SocialsSection() {
   );
 }
 
-function SocialLink({ href, text }) {
+function SocialLink({ href, text }: { href: string; text: string }) {
   return (
     <CustomLink className="m-2 font-mono" href={href}>
       {text.toLowerCase()}
