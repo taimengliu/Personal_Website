@@ -29,14 +29,8 @@ body {
 }
 
 h1 {
-  font-size: 8vw;
+  font-size: 3em;
   line-height: 1;
-}
-
-@media screen and (max-width: 600px) {
-  h1 {
-    font-size: 3rem;
-  } 
 }
 
 header {
